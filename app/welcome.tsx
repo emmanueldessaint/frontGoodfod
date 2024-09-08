@@ -1,16 +1,16 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from 'react';
-import { useRouter } from 'expo-router';  // Utilisez useRouter pour la navigation avec expo-router
+import { useRouter } from 'expo-router';
 
 
 export default function Index() {
 
   const [step, setStep] = useState(0);
-  const router = useRouter();  // Initialisez useRouter pour naviguer
+  const router = useRouter();
 
   const handleClickNext = () => {
     if (step === 3) {
-      router.push('/sign-in'); 
+      router.push('/Signup'); 
     } else {
       setStep(prevStep => (prevStep + 1) % 4);
     }
@@ -27,7 +27,7 @@ export default function Index() {
       case 3:
         return require('../assets/images/Illustration4.png');
       default:
-        return require('../assets/images/Illustration.png'); // Image par défaut au cas où
+        return require('../assets/images/Illustration.png');
     }
   };
 
@@ -57,7 +57,7 @@ export default function Index() {
       case 3:
         return "Choose your food";
       default:
-        return "Welcome"; // Titre par défaut au cas où
+        return "Welcome";
     }
   };
 
@@ -69,7 +69,6 @@ export default function Index() {
     <View
       style={{
         flex: 1,
-        // marginTop: 80,
         alignItems: "center",
       }}
     >
